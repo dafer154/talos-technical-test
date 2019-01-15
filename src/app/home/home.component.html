@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1 class="principal-title">Posts Facebook</h1>
+
+  <div class="wrapper-card">
+    <div class="card card-responsive" style="width: 18rem;" *ngFor="let post of posts">
+      <a (click)="redirectPost(post.id)">
+        <img class="card-img-top" src="http://localhost:3000/{{post.photoUrl}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.description}}</h5>
+          <hr>
+          <div>
+            <span *ngFor="let tag of post.tags" class="badge badge-success">
+              {{tag}}
+            </span>
+          </div>
+          <div class="button-card">
+            <a (click)="redirectPost(post.id)" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Creacion de personas</h1>
+
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit(postForm)">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" name="title" formControlName="title" />
+                        <div class="alert alert-danger" [hidden]="postForm.controls.title.valid">Title is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" name="description" formControlName="description" />
+                        <div class="alert alert-danger" [hidden]="postForm.controls.description.valid">description is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        <input type="text" class="form-control" name="tags" formControlName="tags" />
+                        <div class="alert alert-danger" [hidden]="postForm.controls.tags.valid">Tags is required</div>
+                    </div>
+                    <button type="submit" class="btn btn-default" [disabled]="!postForm.valid">Submit</button> 
+  </form>
+</div>

@@ -1,0 +1,9 @@
+
+<div class="container">
+  <img src="http://localhost:3000/{{post.photoUrl}}">
+  <h1>{{post.titlle}}</h1>
+  <p>{{post.description}}</p>
+  <span *ngFor="let tag of post.tags" class="badge badge-success">
+    {{tag}}
+  </span>
+</div>
