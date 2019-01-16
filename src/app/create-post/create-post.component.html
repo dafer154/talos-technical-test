@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Creacion de personas</h1>
+  <h1 style="text-align: center">Create Posts</h1>
 
   <form [formGroup]="postForm" (ngSubmit)="onSubmit(postForm)">
     <div class="form-group">
@@ -12,29 +12,31 @@
       <input type="text" class="form-control" name="description" formControlName="description" />
       <div class="alert alert-danger" [hidden]="postForm.controls.description.valid">description is required</div>
     </div>
-    <div class="form-group">
+    <!--
+          <div class="form-group">
       <label for="tags">Tags</label>
       <input type="text" class="form-control" name="tags" formControlName="tags" />
       <div class="alert alert-danger" [hidden]="postForm.controls.tags.valid">Tags is required</div>
     </div>
+    -->
 
-    <div style="display:flex; flex-direction: column">
-        <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
-        <label (click)="fileInput.click()">Select File</label>
+    <div class="form-group">
+        <label for="tags">Tags</label>
+        <input #tagsInput type="text" class="form-control" name="tags" formControlName="tags" />
+        <a (click)="agregarTag(tagsInput)">Agregar Tag</a>
+      </div>
+      <div *ngFor="let tag of tagsForm">
+        <span>{{tag}}</span>
+      </div>
     
-        <button type="submit" class="btn btn-primary">publicar</button>
+
+    <div style="display:flex; flex-direction: column; justify-content: center;
+    align-items: center;">
+        <input  accept="image/*" type="file" (change)="onFileSelected($event)" #fileInput>
+
+    
+        <button type="submit" class="btn btn-primary" style="margin-top: 4%;">Create</button>
     </div>
 
   </form>
 </div>
-
-
-
-<!--
-<input 
-  style="display: none" 
-  type="file" (change)="onFileSelected($event)" 
-  #fileInput>
-<button (click)="fileInput.click()">Select File</button>
-<button (click)="onUpload()">Upload!</button>
--->
