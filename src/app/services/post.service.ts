@@ -31,10 +31,10 @@ export class PostService {
 
 
 
-  imagePost(id: number): Observable<any> {
+  imagePost(id: string, imagePath: any): Observable<any> {
     const picture = `posts/${id}/picture`;
     return this.http
-    .get(`${this.BASE_URL}${picture}`);
+    .put(`${this.BASE_URL}${picture}`, imagePath);
   }
 
   private errorHandler(error: Response) {

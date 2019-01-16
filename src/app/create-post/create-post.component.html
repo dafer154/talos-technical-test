@@ -14,9 +14,15 @@
                     </div>
                     <div class="form-group">
                         <label for="tags">Tags</label>
-                        <input type="text" class="form-control" name="tags" formControlName="tags" />
+                        <input type="text" class="form-control" name="tags" formControlName="tags" /><button>add tag</button>
                         <div class="alert alert-danger" [hidden]="postForm.controls.tags.valid">Tags is required</div>
                     </div>
                     <button type="submit" class="btn btn-default" [disabled]="!postForm.valid">Submit</button> 
   </form>
 </div>
+<input 
+  style="display: none" 
+  type="file" (change)="onFileSelected($event)" 
+  #fileInput>
+<button (click)="fileInput.click()">Select File</button>
+<button (click)="onUpload()">Upload!</button>
