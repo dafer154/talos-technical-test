@@ -1,9 +1,39 @@
 
-<div class="container">
-  <img src="http://localhost:3000/{{post.photoUrl}}">
+<div class="container" style="margin-top: 5%;">
+<div class="container__wrapper">
+  <img class="image-post" src="http://localhost:3000/{{post.photoUrl}}">
   <h1>{{post.titlle}}</h1>
-  <p>{{post.description}}</p>
-  <span *ngFor="let tag of post.tags" class="badge badge-success">
-    {{tag}}
-  </span>
+  <p class="description">{{post.description}}</p>
+  <div class="wrapp-tags">
+      <span *ngFor="let tag of post.tags" class="badge badge-success">
+          {{tag}}
+        </span>
+  </div>
 </div>
+</div>
+
+<style>
+
+  .container__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .image-post{
+    width: 180px;
+  }
+
+  .description{
+    font-style: normal;
+    font-size: 30px;
+  }
+
+  .wrapp-tags{
+    display: flex;
+    align-content:space-between 
+  }
+
+</style>

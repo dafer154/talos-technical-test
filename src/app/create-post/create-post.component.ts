@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 //Angular Material chips
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material';
+import {MatFormField} from '@angular/material';
+
 
 export interface Fruit {
   name: string;
@@ -40,6 +42,29 @@ export class CreatePostComponent implements OnInit {
     {name: 'Apple'},
   ];
 
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.fruits.push({name: value.trim()});
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  remove(fruit: Fruit): void {
+    const index = this.fruits.indexOf(fruit);
+
+    if (index >= 0) {
+      this.fruits.splice(index, 1);
+    }
+  }
+
   constructor(private formBuilder: FormBuilder,
               private postService: PostService,
               private router: Router
@@ -47,7 +72,7 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit() {
 
-    this.model = new PostClass('prueba', 'prueba', 'prueba');
+    this.model = new PostClass('.', '.', '.');
 
     this.postForm = this.formBuilder.group({
       title:       [this.model.title, Validators.required],
@@ -87,28 +112,5 @@ export class CreatePostComponent implements OnInit {
   */
 
   /* --------------------------------------------------------------- */
-
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
-
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
-  }
-
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
-
-    if (index >= 0) {
-      this.fruits.splice(index, 1);
-    }
-  }
 
 }
