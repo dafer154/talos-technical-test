@@ -13,6 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 //Forms in Angular
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatChipsModule} from '@angular/material/chips';
+
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -37,7 +42,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //Angular material
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    //Chips
+    MatChipsModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
