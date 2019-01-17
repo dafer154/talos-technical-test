@@ -25,7 +25,6 @@ export class DetailPostComponent implements OnInit {
           this.post = data;
         },
         err => {
-          // If post detail return error, raise 404
           this.router.navigate(['/404']);
         }
       );

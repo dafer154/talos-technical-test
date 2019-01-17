@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,23 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  visible = true;
-  label = '';
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  changeText(boolText: boolean){
-    this.label = boolText === true ? 'Add new post' : '';
-  }
-  hideBtn(){
-    this.visible = false;
-  }
-
-  showBtn(){
-    this.visible = true;
+  add(): void {
+    this.router.navigate([`/createPost`]);
   }
 
 }

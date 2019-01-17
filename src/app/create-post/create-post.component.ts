@@ -38,7 +38,6 @@ export class CreatePostComponent implements OnInit {
 
 
   //Upload image to posts
-
   onFileSelected(event) {
     this.selectedFile = <File>event.target.files[0];
   }

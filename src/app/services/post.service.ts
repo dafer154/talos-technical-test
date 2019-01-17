@@ -29,8 +29,6 @@ export class PostService {
     .get(`${this.BASE_URL}${detail}`);
   }
 
-
-
   imagePost(id: string, imagePath: any): Observable<any> {
     const picture = `posts/${id}/picture`;
     return this.http

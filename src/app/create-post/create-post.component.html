@@ -1,51 +1,33 @@
 <div class="container">
-  <h1 style="text-align: center">Create Posts</h1>
+  <h1 style="text-align: center; margin-top: 6%;">Create Posts</h1>
 
   <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate id="formulario" name="formulario">
     <div class="form-group">
       <label for="title">* Title:</label>
-      <input pInputText type="text" id="title" name="title" required size="100" [(ngModel)]="mainObj.title" #title="ngModel" minlength="2"
+      <input pInputText type="text" class="form-control" id="title" name="title" required size="100" [(ngModel)]="mainObj.title" #title="ngModel" minlength="2"
       />
       <div class="ui-message ui-messages-error ui-corner-all" *ngIf="f.submitted && !title.valid">
         title is Required
       </div>
     </div>
     <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea [rows]="3" [cols]="30" pInputTextarea id="description" name="description" [(ngModel)]="mainObj.description" autoResize="autoResize"
+      <label for="description">Description: </label><br>
+      <textarea class="form-control" [rows]="3" [cols]="50" pInputTextarea id="description" name="description" [(ngModel)]="mainObj.description" autoResize="autoResize"
         class="ui-inputtext"></textarea>
     </div>
-    <!--
-          <div class="form-group">
-      <label for="tags">Tags</label>
-      <input type="text" class="form-control" name="tags" formControlName="tags" />
-      <div class="alert alert-danger" [hidden]="postForm.controls.tags.valid">Tags is required</div>
-    </div>
-    -->
-
-    <!--
-          <div class="form-group">
-        <label for="tags">Tags</label>
-        <input #tagsInput type="text" class="form-control" name="tags" formControlName="tags" />
-        <a (click)="agregarTag(tagsInput.value)">Agregar Tag</a>
-    </div>
-      <div *ngFor="let tag of tagsForm">
-          <span class="badge badge-pill badge-warning">{{tag}}</span>
-      </div>
-     -->
 
     <div class="form-group">
-        <label for="description">Press enter to add new tag:</label>
-        <p-chips [(ngModel)]="mainObj.tags"  id="tags" name="tags"></p-chips>
+      <label for="description">Press enter to add new tag:</label>
+      <p-chips [(ngModel)]="mainObj.tags" id="tags" name="tags"></p-chips>
     </div>
 
     <div style="display:flex; flex-direction: column; justify-content: center;
     align-items: center;">
-      <input accept="image/*" type="file" (change)="onFileSelected($event)" #fileInput>
+      <input accept="image/*" type="file" (change)="onFileSelected($event)" #fileInput />
 
-
-      <button type="submit" class="btn btn-primary" style="margin-top: 4%;">Create</button>
+      <button type="submit" class="btn btn-primary" style="margin-top: 4%;">
+        Create
+      </button>
     </div>
-
   </form>
 </div>

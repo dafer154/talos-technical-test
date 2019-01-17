@@ -1,0 +1,20 @@
+.container__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-post {
+  width: 180px;
+}
+
+.description {
+  font-style: normal;
+  font-size: 30px;
+}
+
+.wrapp-tags {
+  display: flex;
+  align-content: space-between;
+}

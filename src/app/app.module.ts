@@ -14,8 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {MatChipsModule} from '@angular/material/chips';
 
 /* prime ng*/
 import {AccordionModule} from 'primeng/accordion';
@@ -48,12 +46,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    //Angular material
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    //Chips
-    MatChipsModule,
     //prime ng 
     AccordionModule,
     ChipsModule
