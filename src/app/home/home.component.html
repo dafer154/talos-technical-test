@@ -3,7 +3,7 @@
   <h1 class="principal-title">Posts Facebook</h1>
 
   <div class="wrapper-card">
-    <div class="card card-responsive" style="width: 18rem;" *ngFor="let post of posts">
+    <div class="card card-responsive" style="width: 180px;" *ngFor="let post of posts">
       <a (click)="redirectPost(post.id)">
         <img class="card-img-top" src="http://localhost:3000/{{post.photoUrl}}" alt="Card image cap">
         <div class="card-body">
