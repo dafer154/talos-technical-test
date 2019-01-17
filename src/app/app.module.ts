@@ -17,6 +17,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatChipsModule} from '@angular/material/chips';
 
+/* prime ng*/
+import {AccordionModule} from 'primeng/accordion';
+import {MenuItem} from 'primeng/api';
+import { ChipsModule } from 'primeng/chips';
+
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -47,7 +53,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatButtonModule,
     MatCheckboxModule,
     //Chips
-    MatChipsModule
+    MatChipsModule,
+    //prime ng 
+    AccordionModule,
+    ChipsModule
+
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

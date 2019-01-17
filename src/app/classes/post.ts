@@ -1,9 +1,10 @@
-export class PostClass {
+import {Injectable} from '@angular/core';
 
-    constructor(
-      public title?: string,
-      public description?: string,
-      //public tags?: any
-    ) {  }
-
+@Injectable()
+export class Posts {
+    public id: string;
+    public title: string;
+    public description: string;
+    public photoUrl: string;
+    public tags: Array<string>;
 }
