@@ -1,6 +1,5 @@
 # TalosTechnicalTest
 
-I was realize this project how technical test in TALOS DIGITAL
 Se realizo este proyecto como prueba para poder ingresar a la empresa TALOS DIGITAL, la cual se consume datos de un servidor donde se traen distintos posts. Ademas se pueden crear posts y visualizarlos
 
 En este proyecto podemos encontrar lo siguiente
